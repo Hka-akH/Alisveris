@@ -11,6 +11,7 @@ namespace AlışVerişş
 {
     internal class Cart
     {
+        public List<Product> Products {  get; set; } = new List<Product>();
         private List<Product> products = new List<Product>();
 
         public void AddProduct(Product product)

@@ -9,6 +9,14 @@ namespace AlışVerişş
 {
     internal class CartManager
     {
+        private Cart _cart = new Cart();
+        public void AddProduct(Product product)
+        {
+            _cart.AddProduct(product);
+        }
+
+
+
         private static CartManager _instance;
         private static readonly object _lock = new object();
 
@@ -32,12 +40,20 @@ namespace AlışVerişş
                 }
             }
         }
-
-
-
-
+            public void RemovePrudoct(Product product)
+        {
+            Cart.Products.Remove(product);
+        }
     }
-
-
-
 }
+    
+
+
+
+
+
+    
+
+
+
+

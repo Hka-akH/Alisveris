@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlışVerişş
 {
-    internal class OrderMediator : IOrderMediator
+    public class OrderMediator : IOrderMediator
     {
         public void AddProduct(Product product)
         {
@@ -26,7 +26,12 @@ namespace AlışVerişş
 
             payment.Pay(total);
         }
+
+        public void RemoveProduct(Product product)
+        {
+            CartManager.Instance.AddProduct(product);
+        }
+
+
     }
-
-
 }
