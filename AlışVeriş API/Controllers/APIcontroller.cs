@@ -14,7 +14,7 @@ namespace AlışVeriş_API.Controllers
         {
             _mediator = mediator;
         }
-
+        [HttpGet]
         public IActionResult GetProducts()
         {
 
@@ -33,7 +33,7 @@ namespace AlışVeriş_API.Controllers
 
         public IActionResult AddProduct(int id)
         {
-            Product p = id switch
+            Product? p = id switch
             {
                 1 => new Product("Laptop", 15000),
                 2 => new Product("Mouse", 2500),
@@ -45,7 +45,7 @@ namespace AlışVeriş_API.Controllers
                 return BadRequest("Geçersiz Ürün");
 
             OrderMediator mediator = new OrderMediator();
-            mediator.AddProduct(p);
+            _mediator.AddProduct(p);
 
             return Ok("Ürün Başarıyla Eklendi");
 

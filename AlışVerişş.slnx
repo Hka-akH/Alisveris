@@ -1,4 +1,10 @@
 <Solution>
-  <Project Path="AlışVeriş API/AlışVeriş API.csproj" Id="9f9b56ae-9235-4d8b-b1ee-f09047344b7f" />
-  <Project Path="AlışVerişş/AlışVerişş.csproj" Id="fae20d72-c498-4d95-bf49-b87ea470f99e" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="AlışVeriş API/AlışVeriş API.csproj" Id="9f9b56ae-9235-4d8b-b1ee-f09047344b7f">
+    <Platform Solution="Release|x64" Project="x64" />
+  </Project>
+  <Project Path="ClassLibrary1/AışVeriş.csproj" Id="89e2c3f5-1bc1-4b16-a426-937c68eb0f4a" />
 </Solution>
