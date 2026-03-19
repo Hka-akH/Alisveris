@@ -9,10 +9,10 @@ using System.Runtime.CompilerServices;
 
 namespace AlışVerişş
 {
-    internal class Cart
+    public class Cart
     {
         public List<Product> Products {  get; set; } = new List<Product>();
-        private List<Product> products = new List<Product>();
+        public List<Product> products = new List<Product>();
 
         public void AddProduct(Product product)
         {

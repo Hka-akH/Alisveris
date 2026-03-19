@@ -10,5 +10,10 @@ namespace AlışVerişş
     {
         void AddProduct(Product product);
         void MakePayment(int paymentType);
+        void RemoveProduct(Product product);
     }
+
+   
 }
+
+

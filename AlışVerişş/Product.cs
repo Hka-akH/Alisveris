@@ -17,6 +17,13 @@ namespace AlışVerişş
             Price = price;
         }
 
-
+        public override bool Equals(object obj)
+        {
+            return obj is Product p && p.Name == Name;
+        }
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
     }
 }

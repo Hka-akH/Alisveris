@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AlışVerişş
 {
-    internal class CartManager
+    public class CartManager
     {
         private Cart _cart = new Cart();
         public void AddProduct(Product product)
@@ -17,8 +17,8 @@ namespace AlışVerişş
 
 
 
-        private static CartManager _instance;
-        private static readonly object _lock = new object();
+        public static CartManager _instance;
+        public static readonly object _lock = new object();
 
         public Cart Cart { get; private set; }
 

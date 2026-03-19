@@ -29,7 +29,7 @@ namespace AlışVerişş
 
         public void RemoveProduct(Product product)
         {
-            CartManager.Instance.AddProduct(product);
+            CartManager.Instance.Cart.Products.Remove(product);
         }
 
 
