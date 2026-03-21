@@ -19,7 +19,8 @@ namespace AlışVerişş
 
         public override bool Equals(object obj)
         {
-            return obj is Product p && p.Name == Name;
+            if(obj is not  Product other) return false;
+            return Name == other.Name && Price == other.Price;
         }
         public override int GetHashCode()
         {

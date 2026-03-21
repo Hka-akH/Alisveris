@@ -12,16 +12,16 @@ namespace AlışVerişş
     public class Cart
     {
         public List<Product> Products {  get; set; } = new List<Product>();
-        public List<Product> products = new List<Product>();
+        
 
         public void AddProduct(Product product)
         {
-            products.Add(product);
+            Products.Add(product);
             Console.WriteLine($"{product.Name} Sepete Eklendi ");
         }
         public decimal GetTotalPrice()
         {
-            return products.Sum(p => p.Price);
+            return Products.Sum(p => p.Price);
         }
     }
 }
