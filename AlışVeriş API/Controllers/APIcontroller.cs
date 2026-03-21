@@ -14,7 +14,9 @@ namespace AlışVeriş_API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet]
+
+        // Ürün Listeleme
+        [HttpGet] 
         public IActionResult GetProducts()
         {
 
@@ -28,10 +30,10 @@ namespace AlışVeriş_API.Controllers
             return Ok(products);
         }
 
-
+        // Ürün Ekleme
         [HttpPost("add")]
 
-        public IActionResult AddProduct(int id)
+        public IActionResult AddProduct([FromQuery] int id)
         {
             Product? p = id switch
             {
@@ -44,15 +46,16 @@ namespace AlışVeriş_API.Controllers
             if (p == null)
                 return BadRequest("Geçersiz Ürün");
 
-            OrderMediator mediator = new OrderMediator();
+            
             _mediator.AddProduct(p);
 
             return Ok("Ürün Başarıyla Eklendi");
 
         }
 
+        // Ürün Çıkarma
         [HttpPost("remove")]
-        public IActionResult RemoveProduct(int id)
+        public IActionResult RemoveProduct([FromQuery] int id)
         {
             Product p = id switch
             {
@@ -68,6 +71,8 @@ namespace AlışVeriş_API.Controllers
 
             return Ok("Ürün Çıkarıldı");
         }
+
+        // Sepeti Getir
         [HttpGet("cart")]
         public IActionResult GetCart()
         {
@@ -75,8 +80,9 @@ namespace AlışVeriş_API.Controllers
             return Ok(cart.Products);
         }
 
+        // Ödeme Yap
         [HttpPost("pay")]
-        public IActionResult Pay(int method)
+        public IActionResult Pay([FromQuery]int method)
         {
             _mediator.MakePayment(method);
             return Ok("Ödeme Tamamlandı");
